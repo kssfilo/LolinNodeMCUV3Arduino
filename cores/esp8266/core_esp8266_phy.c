@@ -86,7 +86,11 @@ static const uint8_t ICACHE_FLASH_ATTR phy_init_data[128] =
     // 0: 40MHz
     // 1: 26MHz
     // 2: 24MHz
-    [48] = 1,
+    #if F_CRYSTAL == 40000000
+      [48] = 0,
+    #else
+      [48] = 1,
+    #endif
 
 
 
